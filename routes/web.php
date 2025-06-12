@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Models\Product;
+use App\Models\Cart;
+use App\Models\User;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -13,7 +17,11 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+         return view('dashboard', [
+            'productCount' => Product::withoutTrashed()->count(),
+            'cartCount' => Cart::count(),
+            'userCount' => User::count(),
+        ]);
     })->name('dashboard');
 
     Route::resource('products', ProductController::class);

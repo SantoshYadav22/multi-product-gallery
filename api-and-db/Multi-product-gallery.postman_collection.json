@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "0b844ead-75a3-40f9-88f4-77b1f69472eb",
+		"name": "Multi-product-gallery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20412052"
+	},
+	"item": [
+		{
+			"name": "https://multi-product-gallery.test/api/add-cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://multi-product-gallery.test/api/add-cart?user_id=1&product_id=4&quantity=8",
+					"protocol": "https",
+					"host": [
+						"multi-product-gallery",
+						"test"
+					],
+					"path": [
+						"api",
+						"add-cart"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1"
+						},
+						{
+							"key": "product_id",
+							"value": "4"
+						},
+						{
+							"key": "quantity",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://multi-product-gallery.test/api/cart-list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://multi-product-gallery.test/api/cart-list",
+					"protocol": "https",
+					"host": [
+						"multi-product-gallery",
+						"test"
+					],
+					"path": [
+						"api",
+						"cart-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://multi-product-gallery.test/api/cart/update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "quantity",
+						"value": "4",
+						"type": "text"
+					},
+					{
+						"key": "id",
+						"value": "3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://multi-product-gallery.test/api/cart/update?id=3&quantity=5",
+					"protocol": "https",
+					"host": [
+						"multi-product-gallery",
+						"test"
+					],
+					"path": [
+						"api",
+						"cart",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						},
+						{
+							"key": "quantity",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://multi-product-gallery.test/api/cart/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://multi-product-gallery.test/api/cart/delete?id=5",
+					"protocol": "https",
+					"host": [
+						"multi-product-gallery",
+						"test"
+					],
+					"path": [
+						"api",
+						"cart",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://multi-product-gallery.test/api/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://multi-product-gallery.test/api/products",
+					"protocol": "http",
+					"host": [
+						"multi-product-gallery",
+						"test"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
