@@ -19,61 +19,61 @@ class ProductController extends Controller
         ]);
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string',
-            'price' => 'required|numeric',
-            'images.*' => 'image|mimes:jpeg,png,jpg|max:2048'
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'name' => 'required|string',
+    //         'price' => 'required|numeric',
+    //         'images.*' => 'image|mimes:jpeg,png,jpg|max:2048'
+    //     ]);
 
-        $product = Product::create($request->only('name', 'price'));
+    //     $product = Product::create($request->only('name', 'price'));
 
-        if ($request->hasFile('images')) {
-            foreach ($request->file('images') as $image) {
-                $path = $image->store('product_images', 'public');
-                $product->images()->create(['image_path' => $path]);
-            }
-        }
+    //     if ($request->hasFile('images')) {
+    //         foreach ($request->file('images') as $image) {
+    //             $path = $image->store('product_images', 'public');
+    //             $product->images()->create(['image_path' => $path]);
+    //         }
+    //     }
 
-        return response()->json([
-            'status' => true,
-            'message' => 'Product created successfully.',
-            'data' => $product->load('images')
-        ]);
-    }
+    //     return response()->json([
+    //         'status' => true,
+    //         'message' => 'Product created successfully.',
+    //         'data' => $product->load('images')
+    //     ]);
+    // }
 
-    public function show(Product $product)
-    {
-        return response()->json([
-            'status' => true,
-            'data' => $product->load('images')
-        ]);
-    }
+    // public function show(Product $product)
+    // {
+    //     return response()->json([
+    //         'status' => true,
+    //         'data' => $product->load('images')
+    //     ]);
+    // }
 
-    public function update(Request $request, Product $product)
-    {
-        $request->validate([
-            'name' => 'required|string',
-            'price' => 'required|numeric',
-        ]);
+    // public function update(Request $request, Product $product)
+    // {
+    //     $request->validate([
+    //         'name' => 'required|string',
+    //         'price' => 'required|numeric',
+    //     ]);
 
-        $product->update($request->only('name', 'price'));
+    //     $product->update($request->only('name', 'price'));
 
-        return response()->json([
-            'status' => true,
-            'message' => 'Product updated successfully.',
-            'data' => $product
-        ]);
-    }
+    //     return response()->json([
+    //         'status' => true,
+    //         'message' => 'Product updated successfully.',
+    //         'data' => $product
+    //     ]);
+    // }
 
-    public function destroy(Product $product)
-    {
-        $product->delete();
+    // public function destroy(Product $product)
+    // {
+    //     $product->delete();
 
-        return response()->json([
-            'status' => true,
-            'message' => 'Product deleted successfully.'
-        ]);
-    }
+    //     return response()->json([
+    //         'status' => true,
+    //         'message' => 'Product deleted successfully.'
+    //     ]);
+    // }
 }

@@ -1,0 +1,38 @@
+# Project Name
+- Multi Product Gallery
+
+## ✅ Requirements
+- PHP 8.1+
+- Composer
+- Laravel 10+
+- MySQL or SQLite
+- Node.js & NPM (optional, for frontend assets)
+
+## 🚀 Setup Instructions
+
+1. Clone the repo:
+```bash
+git clone https://github.com/SantoshYadav22/multi-product-gallery.git
+
+cd multi-product-
+
+composer update
+
+php artisan key:generate
+
+php artisan migrate
+
+php artisan migrate:fresh --seed
+
+I'm am using laravel herd so i dont need to run php artisan serve because of laravel herd. it create a test server for our project.
+
+If you are not using laravel herd then simply run:
+
+php artisan serve
+
+Now, your project is run in you local system
+
+And i have save database file and postman collection in api-and-db folder in main directory.
+
+Simply import the file. 
+
